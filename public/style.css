@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 13px Helvetica, Arial;
+}
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border: 1px solid #383838;
+    background: #fefefe;
+    box-shadow: 5px 5px 1px 0px #7cd4fc;
+}
+.popup #ok {
+    height: 40px;
+    margin: 10px 20px;
+    box-shadow: inset 0 1px 0 0 #7cd4fc;
+    border: 1px solid #107db0;
+    background-color: #3ABA60;
+}
+.popup input {
+    line-height: 1.5em;
+    border: none;
+    border-bottom: 2px solid #3ABA60;
+    font-size: 1.3em;
+}
+.popup * {
+    margin: 10px;
+}
+.users-list-wrap {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    margin-bottom: 50px;
+}
+.users-list-wrap h1 {
+    text-align: center;
+}
+#users-list li {
+    display: flex;
+    border: 1px solid rgba(157, 255, 206, 0.58);
+    border-radius: 2px;
+    margin: 2px 5px;
+}
+#users-list .self {
+    background-color: rgba(238,255,150,0.29);
+    font-weight: bold;
+}
+#users-list li .status {
+    height: 30px;
+    width: 30px;
+}
+.online {
+    background: lightblue;
+}
+.offline {
+    background: #7e8580;
+}
+.newbie {
+    background: #3372e6;
+}
+#users-list li p {
+    padding: 0 5px;
+    line-height: 30px;
+}
+.messages-list-wrap {
+    flex-direction: column;
+    display: flex;
+    margin-bottom: 150px;
+    margin-left: 300px;
+    max-width: 1400px;
+}
+#messages-list li {
+    width: 50vw;
+    padding: 5px;
+}
+#messages-list .self {
+    align-self: flex-end;
+}
+#messages-list li:nth-child(odd) {
+    background: rgba(109, 238, 221, 0.05);
+}
+#messages-list li:nth-child(even) {
+    background: rgba(238, 155, 107, 0.05);
+}
+.msg {
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    border: 1px solid rgba(22, 54, 95, 0.41);
+    margin: 1px;
+}
+.msg-header {
+    font-style: italic;
+    display: flex;
+    padding-bottom: 5px;
+    font-size: 1em;
+}
+.msg-header p {
+    padding-right: 5px;
+}
+.data {
+    flex-grow: 1;
+    text-align: right;
+}
+.payload {
+    padding-left: 10px;
+    font-size: 2em;
+}
+.msg-to-user {
+    background-color: rgba(238, 255, 150, 0.73) !important;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+}
+footer .user-controls {
+    display: flex;
+    border: 1px solid rgba(82, 147, 255, 0.73);
+}
+footer input {
+    padding: 10px;
+    width: 90%;
+    font-size: 1.5em;
+    background: rgba(130, 224, 255, 0.14);
+}
+footer button {
+    width: 10%;
+    background: rgb(130, 224, 255);
+    border: none;
+    padding: 10px;
+    font-size: 1.5em;
+}
+#typing {
+    height: 1em;
+    padding: 5px;
+    font-size: 1em;
+}

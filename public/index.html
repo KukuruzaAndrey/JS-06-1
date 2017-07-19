@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="popup">
+    <h1>Log into the chat</h1>
+    <input id="name" placeholder="Enter your name">
+    <input id="nick" placeholder="Enter your nick">
+    <button id="ok">OK</button>
+</div>
+<section class='users-list-wrap'>
+    <h1>Users list</h1>
+    <ul id="users-list">
+    </ul>
+</section>
+<section class='messages-list-wrap'>
+    <h1>Chat</h1>
+    <ul id="messages-list">
+
+    </ul>
+</section>
+<footer>
+    <div class="user-controls">
+        <input id="user-input" disabled>
+        <button id="send" disabled>Send</button>
+    </div>
+    <p id="typing"></p>
+</footer>
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
