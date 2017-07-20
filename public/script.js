@@ -110,6 +110,9 @@ socket.on('users list', (users) => {
 });
 socket.on('new user', (user) => {
     addUser(user);
+    const notifEl = document.createElement('li');
+    notifEl.innerHTML = `<b>${user.name} (@${user.nick})</b> has join`;
+    messagesListEl.appendChild(notifEl);
 });
 socket.on('history messages', (messages) => {
     messages.forEach(msg => addMsg(msg));
@@ -121,9 +124,14 @@ socket.on('msg', (msg) => {
     }
     addMsg(msg);
 });
-socket.on('update status', ({id, status}) => {
+socket.on('update status', ({name, nick, date, status, id}) => {
     const userStatus = document.querySelector(`#user-id-${id} .status`);
     userStatus.setAttribute('class', `status ${status}`);
+    if (status === 'offline') {
+        const notifEl = document.createElement('li');
+        notifEl.innerHTML = `<b>${name} (@${nick})</b> has left`;
+        messagesListEl.appendChild(notifEl);
+    }
 });
 userInputEl.onkeydown = (e) => {
     if (e.keyCode === 13) {

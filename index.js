@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
         const user = users.find(({id}) => id === socket.id);
         if (user === undefined) return;
         user.status = 'offline';
-        io.emit('update status', {id: socket.id, status: 'offline'});
+        io.emit('update status', user);
         clearTimeout(statusTimers[socket.id]);
     });
     socket.on('user typing', () => {
